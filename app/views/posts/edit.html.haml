@@ -1,5 +1,7 @@
 .text-center
-  = image_tag @post.image.url(:medium)
+  - if @post.image.file? 
+    =image_tag @post.image.url(:medium) 
+  - else
 .form-wrapper
   = simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f|
     .form-group

@@ -28,8 +28,8 @@ end
 
 def update
 	@post = Post.find(params[:id])
-	@post.update
-	if @post.update
+	@post.update(params.require(:post).permit(:caption))
+	if @post.update(params.require(:post).permit(:caption))
 		redirect_to @post
 	else
 		render 'edit'

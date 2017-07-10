@@ -4,7 +4,11 @@
       .name
         Akshay Pilania
     .image.center-block
-      =image_tag @post.image.url(:medium)
+      -#=image_tag @post.image.url(:medium)
+      - if @post.image.file? 
+        = image_tag @post.image.url(:medium) 
+      - else 
+        
     %p.caption
       =@post.caption
       
@@ -12,3 +16,5 @@
   = link_to "Cancel", posts_path
   |
   = link_to "Edit Post", edit_post_path(@post)      
+
+  
