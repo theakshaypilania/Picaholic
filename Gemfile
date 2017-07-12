@@ -4,10 +4,11 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem 'haml'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'popper_js'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
