@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-
-gem 'kaminari', '~> 0.16.3' 
+gem 'jquery-turbolinks'
+gem 'kaminari', '~> 0.16.3'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form', '~> 3.1.0'
 gem 'paperclip'
