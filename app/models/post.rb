@@ -1,8 +1,13 @@
 class Post < ActiveRecord::Base
-  validates :user_id, presence: true
-  has_attached_file :image,styles:{:medium =>"640x"}
-  validates_attachment_content_type :image ,:content_type => /\Aimage\/.*\Z/
+  acts_as_votable
+
   belongs_to :user
   has_many :comments, dependent: :destroy
-  validates_length_of :caption, :minimum => 3, :allow_blank => true
+
+  validates :user_id, presence: true
+  #validates :image, presence: true
+  validates :caption, length: { minimum: 3 }
+
+  has_attached_file :image, styles: { :medium => "640x" }
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
