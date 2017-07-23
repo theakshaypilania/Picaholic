@@ -5,14 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem 'devise'
-gem 'simple_form'
-gem "paperclip", "~> 5.0.0"
+gem 'simple_form', '3.1.0'
+gem 'paperclip'
 gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'popper_js'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.3'
+gem 'rails', '~> 4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

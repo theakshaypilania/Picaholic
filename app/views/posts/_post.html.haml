@@ -14,9 +14,10 @@
     .post-bottom
       .caption
         .caption-content
-          .user-name
-            = post.user.user_name
+          
           = post.caption
+          .view-inside
+            = link_to 'View',post_path(post)
         .comments{id: "comments_#{post.id}"}
           - if post.comments
             = render post.comments, post: post
