@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
@@ -28,6 +28,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
   def edit
   end
 
@@ -53,8 +54,17 @@ class PostsController < ApplicationController
         format.html { redirect_to :back }
         format.js
       end
-    end
   end
+end
+
+  def unlike
+     if @post.unliked_by current_user
+       respond_to do |format|
+         format.js
+         format.html { redirect_to :back }
+       end
+     end
+   end
 
   private
 
@@ -73,5 +83,4 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
-
 end
