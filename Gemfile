@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'kaminari', '~> 0.16.3' 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form', '~> 3.1.0'
 gem 'paperclip'
 gem 'haml'
-gem 'devise' 
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
