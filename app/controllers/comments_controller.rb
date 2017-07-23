@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
-before_action :set_post
+  before_action :set_post
 
-def create
-	@comment = @post.comments.build(comment_params)
-	@comment.user_id = current_user.id
+  def create
+    @comment = @post.comments.build(comment_params)
+    @comment.user_id = current_user.id
 
-	if @comment.save
+    if @comment.save
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js
@@ -13,29 +13,27 @@ def create
     else
       flash[:alert] = "Check the comment form, something went wrong."
       render root_path
+    end
   end
-end
 
-def destroy
-    @comment = @post.comments.find(params[:id])
+    def destroy
+      @comment = @post.comments.find(params[:id])
 
-    if @comment.user_id == current_user.id
-      @comment.delete
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.js
+      if @comment.user_id == current_user.id
+        @comment.delete
+        respond_to do |format|
+          format.html { redirect_to root_path }
+          format.js
+        end
       end
     end
-end
-
 private
 
-def comment_params  
+def comment_params
   params.require(:comment).permit(:content)
 end
 
-def set_post  
+def set_post
   @post = Post.find(params[:post_id])
-end  
 end
-
+end
