@@ -7,14 +7,18 @@
       .time-ago
         = time_ago_in_words post.created_at
     .image.center-block
-      = link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post)
+      - if post.image.file?
+        = link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post)
+      - else
+
     .post-bottom
-      = render 'posts/likes', post: post
+      .likes
       .caption
         .caption-content
-          .user-name
-            = link_to post.user.user_name, profile_path(post.user.user_name)
           = post.caption
+          .view-inside
+            = link_to 'View',post_path(post)
+          = render 'posts/likes', post: post
           .comments{id: "comments_#{post.id}"}
             - if post.comments.any?
               .paginator{id: "#comments-paginator-#{post.id}"}

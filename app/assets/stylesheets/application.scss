@@ -174,7 +174,7 @@ body {
 .login-bg {
   padding-top: 4em;
   height: 100%;
-  background-image: image-url('beautiful-moonlight-green-full-HD-nature-background-wallpaper-for-laptop-widescreen.jpg');
+  background-image: image-url('Beautiful-HD-Landscape-Images.jpg');
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -318,4 +318,32 @@ body {
     background-color: white;
     padding: 1em;
   }
+
+}
+.follow-button {
+  text-transform: uppercase;
+  border-color: #4090db;
+  color: #4090db;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #2D6396;
+    color: #2D6396;
+  }
+}
+
+.unfollow-button {
+  text-transform: uppercase;
+  border-color: #66bd2b;
+  background-color: #66bd2b;
+  color: white;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #47821F;
+    background-color: #47821F;
+    color: white;
+  }
+}
+
+.view-inside{
+  float:right;
 }
